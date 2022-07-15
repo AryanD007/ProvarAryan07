@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase registryId="423b7113-f44d-442b-a390-543b584d794b" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: Trial (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Trial</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Trial</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument argId="279c8b4f-860f-45c6-9f07-79d61644a81e" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Reuse</value>
+        </argument>
+        <argument id="uiApplicationName"/>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="2" title="Create Object: Case=&gt;CaseId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Case</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">CaseId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Trial</value>
+        </argument>
+        <argument id="Status">
+          <value class="value" valueClass="string">New</value>
+        </argument>
+        <argument id="Origin">
+          <value class="value" valueClass="string">Web</value>
+        </argument>
+        <argument id="Priority">
+          <value class="value" valueClass="string">Medium</value>
+        </argument>
+        <argument argId="80c2596e-15ce-4681-9a56-42b319d9f0a1" id="AccountId">
+          <value class="variable">
+            <path element="AccountId"/>
+          </value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="BusinessHoursId">
+          <value class="value" valueClass="string">01m1t0000009jweAAA</value>
+        </argument>
+        <argument id="Subject"/>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Trial</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Case</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Case&amp;field=BusinessHoursId" name="BusinessHoursId" title="BusinessHoursId"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Case&amp;field=Status" name="Status" title="Status"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Case&amp;field=Origin" name="Origin" title="Origin"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Case&amp;field=Priority" name="Priority" title="Priority"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Case&amp;field=Subject" name="Subject" title="Subject"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Case&amp;field=AccountId" name="AccountId" title="AccountId"/>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexUpdateObject" name="ApexUpdateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.UpdateCustomObjectTestStepCommand" testItemId="3" title="Update Object: Account = {AccountId}">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Account</value>
+        </argument>
+        <argument id="objectId">
+          <value class="variable">
+            <path element="AccountId"/>
+          </value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">AccountUpdated</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Trial</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="ProvarQS__Active__c">
+          <value class="value" valueClass="string">Yes</value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UpdateCustomObjectTestStepCommand.ConnectionName">Trial</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UpdateCustomObjectTestStepCommand.CustomObjectName">Account</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=ProvarQS__Active__c" name="ProvarQS__Active__c" title="ProvarQS__Active__c"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:80c2596e-15ce-4681-9a56-42b319d9f0a1" modelBinding="sf:ui:binding:object?object=Case&amp;field=AccountId" name="AccountId" title="AccountId">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:279c8b4f-860f-45c6-9f07-79d61644a81e" name="reuseConnectionName" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+    <param name="CaseName" title="CaseName">
+      <summary/>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+    </param>
+  </params>
+  <args>
+    <argument id="AccountId"/>
+    <argument id="reuseConnectionName"/>
+    <argument id="CaseName"/>
+  </args>
+</testCase>
