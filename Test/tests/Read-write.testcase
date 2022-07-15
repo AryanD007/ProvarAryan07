@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="0">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="41" title="Salesforce Connect: Trial (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Trial</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Trial</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="uiApplicationName"/>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.io.Read" name="Read" testItemId="1" title="Read: templates/test.xlsx=&gt;Contents">
+      <tags/>
+      <arguments>
+        <argument id="urlString">
+          <value class="url">templates/test.xlsx</value>
+        </argument>
+        <argument id="contentFormat">
+          <value class="value" valueClass="string">Text</value>
+        </argument>
+        <argument id="contentEncoding">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Contents</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="storeAs">
+          <value class="value" valueClass="string">Text</value>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource variableName="SourceData" variableScope="Test">
+          <cacheToken>C:/Users/juhi.panwar/Provar/Workspace/Zephyr/Zephyr testing/templates/test.xlsx;1650443348195</cacheToken>
+          <cachedParameters>
+            <apiParam name="RowNumber"/>
+            <apiParam name="Col1"/>
+          </cachedParameters>
+          <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="None">
+            <workbookPath class="value" valueClass="string">templates/test.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Sheet0</worksheetName>
+            <valuesRange class="value" valueClass="string">A1:A3</valuesRange>
+          </sourceValue>
+        </parameterValueSource>
+      </parameterValueSources>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="17" title="Create Object: Opportunity=&gt;OpportunityId">
+      <tags/>
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Opportunity</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">OpportunityId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Trial</value>
+        </argument>
+        <argument id="Name">
+          <value class="compound">
+            <parts>
+              <value valueClass="string">Opportunity.</value>
+              <funcCall id="UniqueId">
+                <argument id="length">
+                  <value class="value" valueClass="decimal">3</value>
+                </argument>
+              </funcCall>
+            </parts>
+          </value>
+        </argument>
+        <argument id="StageName">
+          <value class="variable">
+            <path element="SourceData"/>
+            <path element="Col1"/>
+          </value>
+        </argument>
+        <argument id="CloseDate">
+          <value class="variable">
+            <path element="TODAY"/>
+          </value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">personal</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Opportunity</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="Name" title="Name"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="StageName" title="StageName"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="CloseDate" title="CloseDate"/>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="2" title="Set Values: Var.Name">
+      <tags/>
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">Var.Name</value>
+              </namedValue>
+              <namedValue name="value"/>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="3" title="For Each: {SourceData}=&gt;Row">
+      <tags/>
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="SourceData"/>
+          </value>
+        </argument>
+        <argument id="fromItem"/>
+        <argument id="valueName">
+          <value class="value" valueClass="string">Row</value>
+        </argument>
+        <argument id="continueOnFailure">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource variableName="SourceData" variableScope="Test">
+          <cacheToken>C:/Users/juhi.panwar/Provar/Workspace/Zephyr/Zephyr testing/templates/test.xlsx;1650443348195</cacheToken>
+          <cachedParameters>
+            <apiParam name="RowNumber"/>
+            <apiParam name="Col1"/>
+            <apiParam name="Col2"/>
+          </cachedParameters>
+          <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" preserveHeadingCase="true" whereComparison="EqualTo">
+            <workbookPath class="value" valueClass="string">templates/test.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Sheet0</worksheetName>
+            <valuesRange class="value" valueClass="string">A1:B3</valuesRange>
+          </sourceValue>
+        </parameterValueSource>
+      </parameterValueSources>
+      <clauses>
+        <clause name="substeps" testItemId="4">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="6" title="Create Object: Opportunity=&gt;OpportunityId">
+              <tags/>
+              <arguments>
+                <argument id="objectType">
+                  <value class="value" valueClass="string">Opportunity</value>
+                </argument>
+                <argument id="resultIdName">
+                  <value class="value" valueClass="string">OpportunityId</value>
+                </argument>
+                <argument id="apexConnectionName">
+                  <value class="value" valueClass="string">Trial</value>
+                </argument>
+                <argument id="StageName">
+                  <value class="variable">
+                    <path element="Row"/>
+                    <path element="Col1"/>
+                  </value>
+                </argument>
+                <argument id="Name">
+                  <value class="compound">
+                    <parts>
+                      <value valueClass="string">Opportunity.</value>
+                      <funcCall id="UniqueId">
+                        <argument id="length">
+                          <value class="value" valueClass="decimal">3</value>
+                        </argument>
+                      </funcCall>
+                    </parts>
+                  </value>
+                </argument>
+                <argument id="CloseDate">
+                  <value class="value" valueClass="date">1652140800000</value>
+                </argument>
+                <argument id="assignmentRuleId"/>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+              </arguments>
+              <parameterGeneratorProperties>
+                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">personal</propertyValue>
+                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Opportunity</propertyValue>
+              </parameterGeneratorProperties>
+              <generatedParameters>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="StageName" title="StageName"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="Name" title="Name"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="CloseDate" title="CloseDate"/>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="23" title="Assert Step">
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">Assert Step</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="24"/>
+              </clauses>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexReadObject" name="ApexReadObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.ReadCustomObjectTestStepCommand" testItemId="20" title="Read Object: Opportunity = {OpportunityId}">
+              <tags/>
+              <arguments>
+                <argument id="objectType">
+                  <value class="value" valueClass="string">Opportunity</value>
+                </argument>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">OpportunityRead</value>
+                </argument>
+                <argument id="objectId">
+                  <value class="variable">
+                    <path element="OpportunityId"/>
+                  </value>
+                </argument>
+                <argument id="apexConnectionName">
+                  <value class="value" valueClass="string">Trial</value>
+                </argument>
+                <argument id="Probability">
+                  <value class="value" valueClass="decimal">100.0</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+              </arguments>
+              <resultAssertions>
+                <resultAssertion resultName="Probability" title="Check Probability">
+                  <expected class="variable">
+                    <path element="Row"/>
+                    <path element="Col2"/>
+                  </expected>
+                </resultAssertion>
+              </resultAssertions>
+              <parameterGeneratorProperties>
+                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.ReadCustomObjectTestStepCommand.ConnectionName">personal</propertyValue>
+                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.ReadCustomObjectTestStepCommand.CustomObjectName">Opportunity</propertyValue>
+              </parameterGeneratorProperties>
+              <generatedParameters>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Probability" name="Probability" title="Probability (%)"/>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexReadObject" name="ApexReadObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.ReadCustomObjectTestStepCommand" testItemId="32" title="Read Object: Opportunity = {OpportunityId}">
+              <tags/>
+              <arguments>
+                <argument id="objectType">
+                  <value class="value" valueClass="string">Opportunity</value>
+                </argument>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">OpportunityRead</value>
+                </argument>
+                <argument id="objectId">
+                  <value class="variable">
+                    <path element="OpportunityId"/>
+                  </value>
+                </argument>
+                <argument id="apexConnectionName">
+                  <value class="value" valueClass="string">Trial</value>
+                </argument>
+                <argument id="Name">
+                  <value class="value" valueClass="string">Express Logistics Standby Generator</value>
+                </argument>
+                <argument id="StageName">
+                  <value class="value" valueClass="string">Closed Won</value>
+                </argument>
+                <argument id="Probability">
+                  <value class="value" valueClass="decimal">100.0</value>
+                </argument>
+                <argument id="CloseDate">
+                  <value class="value" valueClass="date">1616544000000</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+              </arguments>
+              <parameterGeneratorProperties>
+                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.ReadCustomObjectTestStepCommand.ConnectionName">personal</propertyValue>
+                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.ReadCustomObjectTestStepCommand.CustomObjectName">Opportunity</propertyValue>
+              </parameterGeneratorProperties>
+              <generatedParameters>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="Name" title="Opportunity Name"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="StageName" title="Stage"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Probability" name="Probability" title="Probability (%)"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="CloseDate" title="Close Date"/>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="37" title="Set Values: Var.Name">
+              <tags/>
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">Var.Name</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="variable">
+                          <path element="OpportunityId"/>
+                        </value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.io.Write" name="Write" testItemId="34" title="Write: {OpportunityRead}=&gt;templates/test.xlsx">
+              <tags>
+                <string>disabled</string>
+              </tags>
+              <arguments>
+                <argument id="data">
+                  <value class="variable">
+                    <path element="OpportunityRead"/>
+                  </value>
+                </argument>
+                <argument id="dataUrl">
+                  <value class="excelTarget" sheetWriteMode="Overwrite">
+                    <workbookPath class="value" valueClass="string">templates/test.xlsx</workbookPath>
+                    <worksheetName class="value" valueClass="string">Replace</worksheetName>
+                  </value>
+                </argument>
+                <argument id="targetDescription">
+                  <value class="value" valueClass="string">templates/test.xlsx</value>
+                </argument>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.io.Write" name="Write" testItemId="33" title="Write: {OpportunityRead}=&gt;templates/test.xlsx">
+              <tags>
+                <string>disabled</string>
+              </tags>
+              <arguments>
+                <argument id="data">
+                  <value class="variable">
+                    <path element="OpportunityRead"/>
+                  </value>
+                </argument>
+                <argument id="dataUrl">
+                  <value class="excelTarget" excludeCols="Name,CloseDate" sheetWriteMode="Append">
+                    <workbookPath class="value" valueClass="string">templates/test.xlsx</workbookPath>
+                    <worksheetName class="value" valueClass="string">Sheet0</worksheetName>
+                  </value>
+                </argument>
+                <argument id="targetDescription">
+                  <value class="value" valueClass="string">templates/test.xlsx</value>
+                </argument>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.io.Write" name="Write" testItemId="35" title="Write: {OpportunityRead}=&gt;templates/test.xlsx">
+              <tags>
+                <string>disabled</string>
+              </tags>
+              <arguments>
+                <argument id="data">
+                  <value class="variable">
+                    <path element="OpportunityRead"/>
+                  </value>
+                </argument>
+                <argument id="dataUrl">
+                  <value class="excelTarget" sheetWriteMode="Update">
+                    <workbookPath class="value" valueClass="string">templates/test.xlsx</workbookPath>
+                    <worksheetName class="value" valueClass="string">UpdateCondition</worksheetName>
+                  </value>
+                </argument>
+                <argument id="targetDescription">
+                  <value class="value" valueClass="string">templates/test.xlsx</value>
+                </argument>
+                <argument id="updateValueRange"/>
+                <argument id="updateColumnNames">
+                  <value class="value" valueClass="string">FirstRowOfRange</value>
+                </argument>
+                <argument id="updateMatchType">
+                  <value class="value" valueClass="string">Where</value>
+                </argument>
+                <argument id="updateMatchLocator">
+                  <value class="variable">
+                    <path element="Row"/>
+                    <path element="RowNumber"/>
+                  </value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="result" name="updateValueRange" title="Values Range">
+                  <summary>The range of cells that needs to updated. If nothing is specified entire sheet is targeted</summary>
+                  <type>
+                    <textType>
+                      <constraints>
+                        <valueConstraint name="disableTemplateEditor">true</valueConstraint>
+                      </constraints>
+                    </textType>
+                  </type>
+                </apiParam>
+                <apiParam group="result" name="updateColumnNames" title="Column Names">
+                  <summary>Identifies where the column names are in the spreadsheet:</summary>
+                  <defaultValue>FirstRowOfRange</defaultValue>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="boundedValues">FirstRowOfRange:Across the first row|FirstColumnOfRange:Down the first column</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+                <apiParam group="result" internal="true" name="updateMatchType" title="">
+                  <summary/>
+                  <defaultValue>RowOrColNumber</defaultValue>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="boundedValues">RowOrColNumber:Match by Position|Where:Match on Condition|MatchColumns:Match by Columns</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+                <apiParam group="result" manuallyResolved="true" name="updateMatchLocator" title="Match Locator">
+                  <summary>Identifies which rows in the Range will be updated. \n It can either be a row number (where the first row = 1) or a filtering condition against one or more columns (e.g. {firstName = "Joe" and surname = "Bloggs"}.</summary>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.io.Write" name="Write" testItemId="38" title="Write: {Var}=&gt;templates/test.xlsx">
+              <tags>
+                <string>disabled</string>
+              </tags>
+              <arguments>
+                <argument id="data">
+                  <value class="variable">
+                    <path element="Var"/>
+                  </value>
+                </argument>
+                <argument id="dataUrl">
+                  <value class="excelTarget" sheetWriteMode="Update">
+                    <workbookPath class="value" valueClass="string">templates/test.xlsx</workbookPath>
+                    <worksheetName class="value" valueClass="string">UpdateCondition</worksheetName>
+                  </value>
+                </argument>
+                <argument id="targetDescription">
+                  <value class="value" valueClass="string">templates/test.xlsx</value>
+                </argument>
+                <argument id="updateValueRange"/>
+                <argument id="updateColumnNames">
+                  <value class="value" valueClass="string">FirstRowOfRange</value>
+                </argument>
+                <argument id="updateMatchType">
+                  <value class="value" valueClass="string">Where</value>
+                </argument>
+                <argument id="updateMatchLocator">
+                  <value class="eq">
+                    <lhs class="variable">
+                      <path element="StageName"/>
+                    </lhs>
+                    <rhs class="value" valueClass="string">Prospecting</rhs>
+                  </value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="result" name="updateValueRange" title="Values Range">
+                  <summary>The range of cells that needs to updated. If nothing is specified entire sheet is targeted</summary>
+                  <type>
+                    <textType>
+                      <constraints>
+                        <valueConstraint name="disableTemplateEditor">true</valueConstraint>
+                      </constraints>
+                    </textType>
+                  </type>
+                </apiParam>
+                <apiParam group="result" name="updateColumnNames" title="Column Names">
+                  <summary>Identifies where the column names are in the spreadsheet:</summary>
+                  <defaultValue>FirstRowOfRange</defaultValue>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="boundedValues">FirstRowOfRange:Across the first row|FirstColumnOfRange:Down the first column</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+                <apiParam group="result" internal="true" name="updateMatchType" title="">
+                  <summary/>
+                  <defaultValue>RowOrColNumber</defaultValue>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="boundedValues">RowOrColNumber:Match by Position|Where:Match on Condition|MatchColumns:Match by Columns</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+                <apiParam group="result" manuallyResolved="true" name="updateMatchLocator" title="Match Locator">
+                  <summary>Identifies which rows in the Range will be updated. \n It can either be a row number (where the first row = 1) or a filtering condition against one or more columns (e.g. {firstName = "Joe" and surname = "Bloggs"}.</summary>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.io.Write" name="Write" testItemId="31" title="Write: {OpportunityRead}=&gt;templates/test.xlsx">
+              <tags>
+                <string>disabled</string>
+              </tags>
+              <arguments>
+                <argument id="data">
+                  <value class="variable">
+                    <path element="OpportunityRead"/>
+                  </value>
+                </argument>
+                <argument id="dataUrl">
+                  <value class="excelTarget" sheetWriteMode="Update">
+                    <workbookPath class="value" valueClass="string">templates/test.xlsx</workbookPath>
+                    <worksheetName class="value" valueClass="string">UpdateCondition</worksheetName>
+                  </value>
+                </argument>
+                <argument id="targetDescription">
+                  <value class="value" valueClass="string">templates/test.xlsx</value>
+                </argument>
+                <argument id="updateValueRange"/>
+                <argument id="updateColumnNames">
+                  <value class="value" valueClass="string">FirstRowOfRange</value>
+                </argument>
+                <argument id="updateMatchType">
+                  <value class="value" valueClass="string">MatchColumns</value>
+                </argument>
+                <argument id="updateMatchLocator">
+                  <value class="value" valueClass="string">StageName</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="result" name="updateValueRange" title="Values Range">
+                  <summary>The range of cells that needs to updated. If nothing is specified entire sheet is targeted</summary>
+                  <type>
+                    <textType>
+                      <constraints>
+                        <valueConstraint name="disableTemplateEditor">true</valueConstraint>
+                      </constraints>
+                    </textType>
+                  </type>
+                </apiParam>
+                <apiParam group="result" name="updateColumnNames" title="Column Names">
+                  <summary>Identifies where the column names are in the spreadsheet:</summary>
+                  <defaultValue>FirstRowOfRange</defaultValue>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="boundedValues">FirstRowOfRange:Across the first row|FirstColumnOfRange:Down the first column</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+                <apiParam group="result" internal="true" name="updateMatchType" title="">
+                  <summary/>
+                  <defaultValue>RowOrColNumber</defaultValue>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="boundedValues">RowOrColNumber:Match by Position|Where:Match on Condition|MatchColumns:Match by Columns</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+                <apiParam group="result" manuallyResolved="true" name="updateMatchLocator" title="Match Locator">
+                  <summary>Identifies which rows in the Range will be updated. \n It can either be a row number (where the first row = 1) or a filtering condition against one or more columns (e.g. {firstName = "Joe" and surname = "Bloggs"}.</summary>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+</testCase>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="0">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="uiApplicationName"/>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <caseCall testCaseId="98b363fe-ce6a-4442-be84-3df1f5aeb6e8" testCasePath="tests/Task/Account1.testcase" testItemId="5">
+      <arguments>
+        <argument id="AccName">
+          <value class="value" valueClass="string">Tendulkar</value>
+        </argument>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+      </arguments>
+      <outputArguments>
+        <outputArgument id="AccountId">
+          <name class="value" valueClass="string">AccountId</name>
+        </outputArgument>
+      </outputArguments>
+    </caseCall>
+    <caseCall testCaseId="99d259ee-e7ab-4599-81b2-0f1b65e19e0e" testCasePath="tests/Task/Contact.testcase" testItemId="4">
+      <tags/>
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="accountID">
+          <value class="variable">
+            <path element="AccountId"/>
+          </value>
+        </argument>
+      </arguments>
+    </caseCall>
+  </steps>
+</testCase>

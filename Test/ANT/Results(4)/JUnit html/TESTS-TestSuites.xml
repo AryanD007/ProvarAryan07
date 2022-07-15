@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite failures="10" hostname="ibm-aryadeshmukh" id="0" name="Test/tests" package="" skipped="0" tests="17" time="712.285" timestamp="Thu Jun 16 15:59:46 IST 2022">
+	    <properties>
+		      <property name="excludeCallableTestCases" value="false" />
+
+		      <property name="testEnvironment" value="" />
+
+		      <property name="pluginOutputLevel" value="WARNING" />
+
+		      <property name="projectPath" value=".." />
+
+		      <property name="salesforceMetadataCache" value="Reuse" />
+
+		      <property name="resultsPathDisposition" value="Increment" />
+
+		      <property name="testOutputLevel" value="INFO" />
+
+		      <property name="webBrowserType" value="Chrome" />
+
+		      <property name="resultsPath" value="../ANT/Results" />
+
+		      <property name="webBrowserConfiguration" value="Full Screen" />
+
+		      <property name="projectCachePath" value="C:\Users\aryan.deshmukh\Provar\Workspace1\Test\ANT\..\..\.provarCaches" />
+
+	    </properties>
+
+	    <testcase classname="tests/API Create Account.testcase" name="API Create Account.testcase" time="23.573">
+		      <failure message="Execution failed"><![CDATA[Connection exception while opening Partner connection. Connection name: Aryan, environment: <default>, authEndpoint: https://test.salesforce.com/services/Soap/u/54.0, userName: aryan@provar.com, password: [supplied], securityToken: [supplied]]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/Contact.testcase" name="Contact.testcase" time="6.515">
+	</testcase>
+
+	    <testcase classname="tests/Control and UI.testcase" name="Control and UI.testcase" time="129.341">
+		      <failure message="Execution failed"><![CDATA[Assertion Failed.Bateman EqualTo Patrick]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/Count.testcase" name="Count.testcase" time="26.646">
+	</testcase>
+
+	    <testcase classname="tests/Create Account and Contact.testcase" name="Create Account and Contact.testcase" time="106.58">
+		      <failure message="Execution failed"><![CDATA[The locator resolution failed]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/Create account.testcase" name="Create account.testcase" time="40.472">
+		      <failure message="Execution failed"><![CDATA[The locator resolution failed]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/Create account2.testcase" name="Create account2.testcase" time="41.864">
+		      <failure message="Execution failed"><![CDATA[The locator resolution failed]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/Create case.testcase" name="Create case.testcase" time="63.974">
+		      <failure message="Execution failed"><![CDATA[The locator resolution failed]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/Create case2.testcase" name="Create case2.testcase" time="26.224">
+		      <failure message="Execution failed"><![CDATA[The locator resolution failed]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/Create opportunity.testcase" name="Create opportunity.testcase" time="43.691">
+		      <failure message="Execution failed"><![CDATA[The locator resolution failed]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/Create opportunity2.testcase" name="Create opportunity2.testcase" time="26.323">
+		      <failure message="Execution failed"><![CDATA[The locator resolution failed]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/CustomTablemapping.testcase" name="CustomTablemapping.testcase" time="6.295">
+	</testcase>
+
+	    <testcase classname="tests/DateAdd.testcase" name="DateAdd.testcase" time="0.101">
+	</testcase>
+
+	    <testcase classname="tests/DateAdd1.testcase" name="DateAdd1.testcase" time="0.084">
+	</testcase>
+
+	    <testcase classname="tests/DateFormat.testcase" name="DateFormat.testcase" time="0.047">
+	</testcase>
+
+	    <testcase classname="tests/DateParse.testcase" name="DateParse.testcase" time="0.031">
+	</testcase>
+
+	    <testcase classname="tests/Email.testcase" name="Email.testcase" time="122.248">
+		      <failure message="Execution failed"><![CDATA[Failing Test Step because the Max Attempts has been reached.]]></failure>
+
+	    </testcase>
+
+  </testsuite>
+</testsuites>

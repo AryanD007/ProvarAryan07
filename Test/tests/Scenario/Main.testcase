@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="19">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="7" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="uiApplicationName"/>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="9" title="ReadExcel">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">ReadExcel</value>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource variableName="SourceData" variableScope="Test">
+          <cacheToken>C:\\Users\\aryan.deshmukh\\Provar\\Workspace1\\Test\\templates\\Book 1.xlsx;1654500829427</cacheToken>
+          <cachedParameters>
+            <apiParam name="RowNumber"/>
+            <apiParam name="AccountName"/>
+          </cachedParameters>
+          <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+            <workbookPath class="value" valueClass="string">templates/Book 1.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Sheet1</worksheetName>
+            <valuesRange class="value" valueClass="string">A1:A2</valuesRange>
+          </sourceValue>
+        </parameterValueSource>
+      </parameterValueSources>
+      <clauses>
+        <clause name="hidden" testItemId="5"/>
+      </clauses>
+    </apiCall>
+    <caseCall testCaseId="f25f389a-ad32-4bcd-a854-661322e69f6c" testCasePath="tests/Scenario/Account.testcase" testItemId="1">
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+      </arguments>
+    </caseCall>
+    <caseCall testCaseId="edfaf7b8-4628-4010-872d-73c0d1504fc3" testCasePath="tests/Scenario/Case.testcase" testItemId="2">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+      </arguments>
+    </caseCall>
+    <caseCall testCaseId="06d70368-ffa4-41e5-86d1-bbe3c775de76" testCasePath="tests/Scenario/Case1.testcase" testItemId="10">
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+      </arguments>
+    </caseCall>
+  </steps>
+</testCase>

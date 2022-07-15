@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testProject selectedBrowserProviderDeviceName="Full Screen" selectedBrowserProviderName="Desktop">
+  <title>/Test/.testproject</title>
+  <configPath>config</configPath>
+  <testsPath>tests</testsPath>
+  <testPlansPath>plans</testPlansPath>
+  <templatesPath>templates</templatesPath>
+  <sourcePath>src</sourcePath>
+  <secureStoragePath>.secrets</secureStoragePath>
+  <browserDebugPort>0</browserDebugPort>
+  <environments>
+    <environment name="SIT">
+      <summary/>
+    </environment>
+    <environment name="UAT">
+      <summary/>
+    </environment>
+    <environment name="DIT">
+      <summary/>
+    </environment>
+  </environments>
+  <variables>
+    <testVariable name="a">
+      <valueType class="textType">
+        <constraints>
+          <valueConstraint name="minLength">0</valueConstraint>
+          <valueConstraint name="maxLength">9999</valueConstraint>
+        </constraints>
+      </valueType>
+      <summary/>
+      <values>
+        <testVariableValue>
+          <value class="value" valueClass="string">10</value>
+        </testVariableValue>
+        <testVariableValue envName="SIT">
+          <valueType class="textType">
+            <constraints>
+              <valueConstraint name="minLength">0</valueConstraint>
+              <valueConstraint name="maxLength">9999</valueConstraint>
+            </constraints>
+          </valueType>
+          <value class="value" valueClass="string">20</value>
+        </testVariableValue>
+        <testVariableValue envName="UAT">
+          <valueType class="textType">
+            <constraints>
+              <valueConstraint name="minLength">0</valueConstraint>
+              <valueConstraint name="maxLength">9999</valueConstraint>
+            </constraints>
+          </valueType>
+          <value class="value" valueClass="string">3</value>
+        </testVariableValue>
+      </values>
+    </testVariable>
+    <testVariable name="_chromeOptions">
+      <valueType class="textType">
+        <constraints>
+          <valueConstraint name="minLength">0</valueConstraint>
+          <valueConstraint name="maxLength">9999</valueConstraint>
+        </constraints>
+      </valueType>
+      <summary/>
+      <values>
+        <testVariableValue>
+          <value class="value" valueClass="string">--no-sandbox</value>
+        </testVariableValue>
+      </values>
+    </testVariable>
+    <testVariable name="_webDriverLogFile">
+      <valueType class="textType">
+        <constraints>
+          <valueConstraint name="minLength">0</valueConstraint>
+          <valueConstraint name="maxLength">9999</valueConstraint>
+        </constraints>
+      </valueType>
+      <summary/>
+      <values>
+        <testVariableValue>
+          <value class="value" valueClass="string">C:\\Aryan\\MyWebDriverLogs.txt</value>
+        </testVariableValue>
+      </values>
+    </testVariable>
+  </variables>
+  <connectionClasses>
+    <connectionClass name="sf">
+      <connections>
+        <connection id="a8be8f9d-0faa-45c8-b753-ff12d71a3954" name="Trial">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="c8af7482-3692-4d1c-a6ce-1f0c9eccf7c5" url="sf:user=internaltraining@provartesting.com.training;password={password};environment=SANDBOX"/>
+          </connectionUrls>
+        </connection>
+        <connection id="5ba59511-df2d-49f4-9be5-223908329cb7" name="Aryan">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="ed91a00c-98a4-44d0-a026-81efc57d7673" url="sf:user=aryan@provar.com;password={password};securityToken={securityToken};environment=SANDBOX;lightningMode=true"/>
+          </connectionUrls>
+        </connection>
+        <connection id="7ee9df93-e001-401a-bf63-aadc8f332c18" name="Admin">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="0035e0a2-529a-46b8-b218-339323741aa6" url="sf:user=internaltraining@provartesting.com.training;password={password};environment=SANDBOX;lightningMode=true"/>
+            <connectionUrl envName="SIT" secureStorageNodeId="3e996575-83cf-4534-a045-b0acfc224a73" url="sf:user=internaltraining@provartesting.com.training;password={password};environment=SANDBOX;lightningMode=true"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="google">
+      <connections>
+        <connection id="88496871-5f32-4b69-bc4d-98ebccc90e96" name="Gmail">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="0f942a4f-b582-4634-a95f-68149060169f" url="google:user=aryan.deshmukh@provartesting.com;accessToken={accessToken};refreshToken={refreshToken};expiry=1654956330000"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="msexc">
+      <connections>
+        <connection id="ea24f719-a439-4304-ba77-14eb5a5cfbdc" name="Outlook">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="d88dc964-31c4-4d4a-a212-1970683c26f3" url="exchange:user=deshmukharyan14@outlook.com;password={password}"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="webservice">
+      <connections>
+        <connection id="29d8bf57-9dd2-48c3-ba56-73ee98b68376" name="IWT">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="restservice:url=https://www.instantwebtools.net/fake-rest-api;authenticationType=NO_AUTHENTICATION">
+              <customHeaders/>
+            </connectionUrl>
+          </connectionUrls>
+        </connection>
+        <connection id="c004beb3-a50b-4e4b-929f-08ce7aaaf2d1" name="Gorest">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="restservice:url=https://gorest.co.in/;authenticationType=NO_AUTHENTICATION">
+              <customHeaders/>
+            </connectionUrl>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="ui">
+      <connections>
+        <connection id="50641c9e-4951-45e9-99ff-8d1cc164750b" name="Google">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="se:baseUrl=https://www.google.com/"/>
+          </connectionUrls>
+        </connection>
+        <connection id="9d475767-7e29-428f-a9ec-099db86789e4" name="Sf">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="se:baseUrl=http:///www.salesforce.com/"/>
+          </connectionUrls>
+        </connection>
+        <connection id="b832db3a-22f1-4673-aa15-2b1ea1fc3c89" name="W3">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="se:baseUrl=http://w3schools.com"/>
+          </connectionUrls>
+        </connection>
+        <connection id="319024c4-6545-42c9-9798-af7a6367a70e" name="Dummy">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="se:baseUrl=http://the-internet.herokuapp.com/drag_and_drop"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+  </connectionClasses>
+  <browserConfigurations>
+    <browserConfiguration adjustBrowserWidthForChromeIde="true" browserHeight="0" browserWidth="0" name="Full Screen">
+      <summary>Full screen with Test Builder adjustment</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="768" browserHeightType="Pixels" browserWidth="1024" browserWidthType="Pixels" name="1024x768">
+      <summary>Fixed 1024x768</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="800" browserHeightType="Pixels" browserWidth="1280" browserWidthType="Pixels" name="1280x800">
+      <summary>Fixed 1280x800</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="768" browserHeightType="Pixels" browserWidth="1366" browserWidthType="Pixels" name="1366x768">
+      <summary>Fixed 1366x768</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="1080" browserHeightType="Pixels" browserWidth="1920" browserWidthType="Pixels" name="1920x1080">
+      <summary>Fixed 1920x1080</summary>
+    </browserConfiguration>
+  </browserConfigurations>
+  <browserApplications>
+    <browserApplication connectionTypes="sf" name="Salesforce1">
+      <properties>
+        <browserPlatformProperty name="browserName" platform="IOS" type="DesiredCapability" value="Safari"/>
+        <browserPlatformProperty name="browserName" platform="ANDROID" type="DesiredCapability" value="Chrome"/>
+      </properties>
+    </browserApplication>
+    <browserApplication connectionTypes="sf" name="ServiceMax FSA">
+      <properties>
+        <browserPlatformProperty name="bundleId" platform="IOS" type="DesiredCapability" value="com.servicemaxinc.svmxfieldserviceapp"/>
+        <browserPlatformProperty name="app" platform="DESKTOP" type="DesiredCapability" value="C:\\Program Files\\ServiceMax\\ServiceMax Field Service\\Laptop Mobile.exe"/>
+      </properties>
+    </browserApplication>
+  </browserApplications>
+  <browserProviders>
+    <browserProvider name="Desktop" type="SeleniumLocal">
+      <devices>
+        <browserProviderDevice name="Full Screen">
+          <properties>
+            <browserPlatformProperty name="summary" value="Full screen with Test Builder adjustment"/>
+            <browserPlatformProperty name="browserHeightType" value="Full"/>
+            <browserPlatformProperty name="browserWidthType" value="Full"/>
+            <browserPlatformProperty name="adjustBrowserWidthForChromeIde" value="true"/>
+          </properties>
+        </browserProviderDevice>
+        <browserProviderDevice name="1024x768">
+          <properties>
+            <browserPlatformProperty name="summary" value="Fixed 1024x768"/>
+            <browserPlatformProperty name="browserHeightType" value="Pixels"/>
+            <browserPlatformProperty name="browserWidthType" value="Pixels"/>
+            <browserPlatformProperty name="browserHeight" value="768"/>
+            <browserPlatformProperty name="browserWidth" value="1024"/>
+          </properties>
+        </browserProviderDevice>
+        <browserProviderDevice name="1280x800">
+          <properties>
+            <browserPlatformProperty name="summary" value="Fixed 1280x800"/>
+            <browserPlatformProperty name="browserHeightType" value="Pixels"/>
+            <browserPlatformProperty name="browserWidthType" value="Pixels"/>
+            <browserPlatformProperty name="browserHeight" value="800"/>
+            <browserPlatformProperty name="browserWidth" value="1280"/>
+          </properties>
+        </browserProviderDevice>
+        <browserProviderDevice name="1366x768">
+          <properties>
+            <browserPlatformProperty name="summary" value="Fixed 1366x768"/>
+            <browserPlatformProperty name="browserHeightType" value="Pixels"/>
+            <browserPlatformProperty name="browserWidthType" value="Pixels"/>
+            <browserPlatformProperty name="browserHeight" value="768"/>
+            <browserPlatformProperty name="browserWidth" value="1366"/>
+          </properties>
+        </browserProviderDevice>
+        <browserProviderDevice name="1920x1080">
+          <properties>
+            <browserPlatformProperty name="summary" value="Fixed 1920x1080"/>
+            <browserPlatformProperty name="browserHeightType" value="Pixels"/>
+            <browserPlatformProperty name="browserWidthType" value="Pixels"/>
+            <browserPlatformProperty name="browserHeight" value="1080"/>
+            <browserPlatformProperty name="browserWidth" value="1920"/>
+          </properties>
+        </browserProviderDevice>
+      </devices>
+    </browserProvider>
+    <browserProvider name="SGrid" type="SeleniumGrid">
+      <devices>
+        <browserProviderDevice name="WIN10 Chrome ANY" platform="WIN10">
+          <properties>
+            <browserPlatformProperty name="browserName" type="DesiredCapability" value="Chrome"/>
+            <browserPlatformProperty name="version" type="DesiredCapability" value="ANY"/>
+            <browserPlatformProperty name="acceptSslCerts" type="DesiredCapability" value="true"/>
+            <browserPlatformProperty name="browserName" type="DesiredCapability" value="chrome"/>
+          </properties>
+        </browserProviderDevice>
+      </devices>
+      <properties>
+        <browserPlatformProperty name="gridUrl" value="http://localhost:4444/wd/hub"/>
+      </properties>
+    </browserProvider>
+  </browserProviders>
+</testProject>

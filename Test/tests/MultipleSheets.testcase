@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="0">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">LightningSales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.DoWhile" name="DoWhile" testItemId="4" title="While: {true}">
+      <arguments>
+        <argument id="condition">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="counterName">
+          <value class="value" valueClass="string">LoopCounter</value>
+        </argument>
+        <argument id="counterStart">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="counterEnd">
+          <value class="variable">
+            <path element="size"/>
+          </value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="5"/>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="6" title="Create Object: Account=&gt;AccountId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Account</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">AccountId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="Name">
+          <value class="variable">
+            <path element="Account"/>
+            <path element="Name"/>
+          </value>
+        </argument>
+        <argument id="Phone">
+          <value class="variable">
+            <path element="Account"/>
+            <path element="Phone"/>
+          </value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Account</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Name" name="Name" title="Name"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Phone" name="Phone" title="Phone"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <parameterValueSources>
+    <parameterValueSource variableName="Account" variableScope="Test">
+      <cacheToken>C:\\Users\\aryan.deshmukh\\Provar\\Workspace1\\Test\\templates\\Multiple.xlsx;1657713846948</cacheToken>
+      <cachedParameters>
+        <apiParam name="Name"/>
+        <apiParam name="Phone"/>
+      </cachedParameters>
+      <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+        <workbookPath class="value" valueClass="string">templates/Multiple.xlsx</workbookPath>
+        <worksheetName class="value" valueClass="string">Sheet1</worksheetName>
+        <valuesRange class="value" valueClass="string"/>
+      </sourceValue>
+    </parameterValueSource>
+    <parameterValueSource variableName="Product" variableScope="Test">
+      <cacheToken>C:\\Users\\aryan.deshmukh\\Provar\\Workspace1\\Test\\templates\\Multiple.xlsx;1657713846948</cacheToken>
+      <cachedParameters>
+        <apiParam name="ProductName"/>
+        <apiParam name="ProductCode"/>
+      </cachedParameters>
+      <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+        <workbookPath class="value" valueClass="string">templates/Multiple.xlsx</workbookPath>
+        <worksheetName class="value" valueClass="string">Sheet2</worksheetName>
+        <valuesRange class="value" valueClass="string"/>
+      </sourceValue>
+    </parameterValueSource>
+  </parameterValueSources>
+</testCase>
